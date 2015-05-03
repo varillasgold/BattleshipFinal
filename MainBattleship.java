@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
-
+import android.widget.Button;
 
 public class MainBattleship extends Activity {
 
@@ -17,9 +17,10 @@ public class MainBattleship extends Activity {
         super.onCreate(savedInstanceState);
         GridComponent pv = new GridComponent(this);
 
-
+        // remove the title bar
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        // set screen
         setContentView(pv);
 
 
