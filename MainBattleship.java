@@ -10,7 +10,7 @@ import android.view.Window;
 
 public class MainBattleship extends Activity {
 
-
+//changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
