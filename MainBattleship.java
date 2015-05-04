@@ -149,7 +149,7 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
     }
     else if (turncounter == false)
     {
-        
+
 
 
 
