@@ -47,13 +47,15 @@ public class GridComponent extends View {
         Paint paint = new Paint();
         g.drawBitmap(battleshipback, 0, 0, paint);
 
+        g.drawCircle(3, 3, 5, paint);
 
-        for (int i = 0; i < 7; i++) {
+
+        for (int i = 0; i < 10; i++) {
             for (int p = 0; p < 7; p++) {
                 if (MainBattleship.position[i][p] != null) {
 
-                    int x = (int) (77) * i;
-                    int y = (70 * p) + 610;
+                    int x = (int)(i * (77));
+                    int y = (int)((p * 65) + 610);
                     MainBattleship.position[i][p].drawVessel(g, x, y, paint);
                 }// end if
 
@@ -62,6 +64,5 @@ public class GridComponent extends View {
         }// end for
 
     }
-
-
 }
+

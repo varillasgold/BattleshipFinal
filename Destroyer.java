@@ -17,7 +17,7 @@ public class Destroyer extends Vessel{
     @Override
     public void drawVessel(Canvas g, int x, int y, Paint paint) {
         vesselim = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.submarine), 77, 130, false);
+                R.drawable.submarine), 77, 140, false);
 
 
         g.drawBitmap(vesselim, x, y, paint);

@@ -12,7 +12,7 @@ import android.content.Context;
 
 import java.util.Random;
 
-public class MainBattleship extends Activity implements View.OnTouchListener{
+public class MainBattleship extends Activity implements View.OnTouchListener {
 
     public static Vessel[][] position = new Vessel[10][7];
     public static Vessel[][] aiposition = new Vessel[10][7];
@@ -44,25 +44,25 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
         pv.setOnTouchListener(this);
 
         // set enemy ships down
-            Random rand = new Random();
-            int x1 = rand.nextInt(2);
-            int y1 = rand.nextInt(6);
-            aiposition[x1][y1] = new Submarine(this);
+        Random rand = new Random();
+        int x1 = rand.nextInt(2);
+        int y1 = rand.nextInt(6);
+        aiposition[x1][y1] = new Submarine(this);
 
-            Random rand2 = new Random();
-            int x2 = rand.nextInt(4 - 2) + 2;
-            int y2 = rand.nextInt(6);
-            aiposition[x2][y2] = new Destroyer(this);
+        Random rand2 = new Random();
+        int x2 = rand.nextInt(4 - 2) + 2;
+        int y2 = rand.nextInt(6);
+        aiposition[x2][y2] = new Destroyer(this);
 
-            Random rand3 = new Random();
-            int x3 = rand.nextInt(6 - 4) + 4;
-            int y3 = rand.nextInt(5);
-            aiposition[x3][y3] = new Battleship(this);
+        Random rand3 = new Random();
+        int x3 = rand.nextInt(6 - 4) + 4;
+        int y3 = rand.nextInt(5);
+        aiposition[x3][y3] = new Battleship(this);
 
-            Random rand4 = new Random();
-            int x4 = rand.nextInt(10 - 7) + 7;
-            int y4 = rand.nextInt(4);
-            aiposition[x4][y4] = new Carrier(this);
+        Random rand4 = new Random();
+        int x4 = rand.nextInt(10 - 7) + 7;
+        int y4 = rand.nextInt(4);
+        aiposition[x4][y4] = new Carrier(this);
 
 
         // set screen
@@ -96,89 +96,36 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
         float x = event.getX();
         float y = event.getY();
 
-      //  System.out.println("THE MOUSE WAS CLICKED!!!! "+event.getX()+" "+event.getY());
+        System.out.println("THE MOUSE WAS CLICKED!!!! "+ x +" "+y );
 
 
-        int i = (int)(x/(77));
-        int p = (int) ((y - 610)/70);
+        int i = (int) (x / (77));
+        int p = (int) ((y - 610) / 65);
 
+        System.out.println("THE MOUSE WAS CLICKED!!!! "+ i +" "+p );
 
-    if(placecounter == 3){
+        if (placecounter == 3) {
             position[i][p] = new Carrier(this);
             placecounter++;
-        MainBattleship.pv.postInvalidate();
+
         }
-     if(placecounter == 2){
+        if (placecounter == 2) {
             position[i][p] = new Battleship(this);
             placecounter++;
-         MainBattleship.pv.postInvalidate();
+
         }
-     if(placecounter == 1){
+        if (placecounter == 1) {
             position[i][p] = new Destroyer(this);
             placecounter++;
-         MainBattleship.pv.postInvalidate();
+
         }
-      if(placecounter == 0) {
-          position[i][p] = new Submarine(this);
+        if (placecounter == 0) {
+            position[i][p] = new Submarine(this);
             placecounter++;
-          MainBattleship.pv.postInvalidate();
-      }
 
-
-       // MainBattleship.pv.postInvalidate();
-
-// this should all be in a loop with a turncounter
-       // get player's target
-
-
-
-
-    if (turncounter == true ) {
-        float targetx = event.getX();
-        float targety = event.getY();
-
-
-        int targeti = (int) (x / (77));
-        int targetp = (int) ((y - 140) / 65);
-
-        if (aiposition[targeti][targetp] != null) {
-            // print out "You Hit Them!"
-            // show red dot
-        } else {
-            // print "Miss"
         }
 
-        turncounter = false;
-    }
-    else if (turncounter == false)
-    {
-
-        // AI goes here
-        // AI picks random coordinates on grid
-        // if it's a hit, display hit and put a red dot
-        // if it's a miss, display miss
-
-
-
-        turncounter = true;
-
-
-
-    }
-
-// work
-
-
+        pv.postInvalidate();
         return false;
-
-
-
-
-
-
-
     }
-
-
-
 }
