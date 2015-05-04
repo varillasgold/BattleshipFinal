@@ -32,9 +32,11 @@ public class GridComponent extends View
     {
         Paint paint = new Paint();
         g.drawBitmap(battleshipback, 0,0, paint);
+        Button button = new Button(this);
+        button.setText("Rotate");
 
-
-
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rootlayout);
+        relativeLayout.addView(button);
 
 
     }
