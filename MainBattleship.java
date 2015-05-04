@@ -22,6 +22,7 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
     Context that = this;
     int placecounter = 0;
     int aiplacecounter = 0;
+    boolean turncounter = true;
 
 
 //changes
@@ -128,13 +129,33 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
 // this should all be in a loop with a turncounter
        // get player's target
 
+
+
+
+    if (turncounter ==true ) {
         float targetx = event.getX();
         float targety = event.getY();
 
 
-        int targeti = (int)(x/(77));
-        int targetp = (int) ((y - 610)/70);
+        int targeti = (int) (x / (77));
+        int targetp = (int) ((y - 140) / 65);
 
+        if (aiposition[targeti][targetp] != null) {
+            // print out "You Hit Them!"
+            // show red dot
+        } else {
+            // print "Miss"
+        }
+    }
+    else if (turncounter == false)
+    {
+        
+
+
+
+
+
+    }
 
 
 
