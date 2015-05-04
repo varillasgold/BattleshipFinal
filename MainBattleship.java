@@ -23,6 +23,7 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
     int placecounter = 0;
     int aiplacecounter = 0;
     boolean turncounter = true;
+    boolean filled = true;
 
 
 //changes
@@ -132,7 +133,7 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
 
 
 
-    if (turncounter ==true ) {
+    if (turncounter == true ) {
         float targetx = event.getX();
         float targety = event.getY();
 
@@ -146,18 +147,26 @@ public class MainBattleship extends Activity implements View.OnTouchListener{
         } else {
             // print "Miss"
         }
+
+        turncounter = false;
     }
     else if (turncounter == false)
     {
 
+        // AI goes here
+        // AI picks random coordinates on grid
+        // if it's a hit, display hit and put a red dot
+        // if it's a miss, display miss
 
 
+
+        turncounter = true;
 
 
 
     }
 
-
+// work
 
 
         return false;
